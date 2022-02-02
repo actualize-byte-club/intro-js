@@ -184,6 +184,9 @@ function twoSmallestNumbers(numbers) {
   }
   index = 0;
   var secondSmallestNumber = numbers[smallestIndex - 1];
+  if (smallestIndex === 0) {
+    secondSmallestNumber = numbers[1];
+  }
   while (index < numbers.length) {
     if (numbers[index] < secondSmallestNumber && index !== smallestIndex) {
       secondSmallestNumber = numbers[index];
@@ -193,7 +196,8 @@ function twoSmallestNumbers(numbers) {
   return [smallestNumber, secondSmallestNumber];
 }
 
-console.log(twoSmallestNumbers([3, 4, 1, 8, 6]));
+console.log(twoSmallestNumbers([1, 4, 3, 8, 6]));
+
 // 8) Write a function that takes in an array of numbers and returns a count of how many zeros are in the array.
 // 9) Write a function that takes in an array of numbers and returns true if all the numbers are bigger than 10, otherwise returns false.
 // 10) Write a function that takes in an array of words and returns the number of times the letter “a” appeared in total.
